@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Rent Prediction Output</title>
+    <style>
+        body {
+            background-image: url('/static/outputimage.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .result-container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1d2d7d;; /* Change background color to black */
+            text-align: center;
+            box-shadow: 0 0 20px white; /* Add white box shadow with blur */
+        }
+        .result-heading {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .predicted-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: white; /* Change predicted price color to white */
+        }
+        .result-container a {
+            /* Style for the "Go Back to Home" button */
+            display: block;
+            margin-top: 20px;
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border-radius: 20px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="result-container">
+        <h2 class="result-heading">House Rent Prediction</h2>
+        <p class="predicted-price">Predicted Price: {{ output }}</p>  >
+    </div> -->
+
+    <div class="result-container">
+        <h2 class="result-heading">House Rent Prediction</h2>
+        {% if output %}
+        <p class="predicted-price">Predicted Price: {{ output }} .Rs</p>
+        {% else %}
+        <p class="predicted-price">Predicted Price: N/A</p>
+        {% endif %}
+        <a href="/">Go Back to Home</a>
+    </div>
+</body>
+</html>

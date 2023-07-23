@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Rent Prediction</title>
+    <style>
+        body {
+            background-color: #053545; /* Set the background color */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            color: #fff;
+        }
+        .form-container {
+            width: 80%; /* Adjust the width as desired */
+            height: auto; /* Adjust the height as desired */
+            background-color: white;
+            border-radius: 30px;
+            padding: 20px;
+            margin-top: 50px; /* Adjust the top margin to position the form */
+            box-shadow: 0px 0px 20px 10px rgba(54, 33, 130, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .input-field {
+            margin-bottom: 20px;
+            width: 80%; /* Adjust the width as desired */
+        }
+        .input-label {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+        .input-value {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .calculate-btn {
+            margin-top: 20px;
+            width: 50%; /* Adjust the width as desired */
+            padding: 10px;
+            background-color: #800080;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(128, 0, 128, 0.5); /* Add a purple blur box shadow */
+        }
+        .calculate-btn:hover {
+            background-color: #9932cc; /* Change the background color on hover */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form action="/predict" method="post">
+            <div class="input-field">
+                <label for="area" class="input-label">Area:</label>
+                <input type="text" id="area" name="area" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="bedrooms" class="input-label">Bedrooms:</label>
+                <input type="text" id="bedrooms" name="bedrooms" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="bathrooms" class="input-label">Bathrooms:</label>
+                <input type="text" id="bathrooms" name="bathrooms" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="stories" class="input-label">Stories:</label>
+                <input type="text" id="stories" name="stories" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="mainroad" class="input-label">Main Road (1 for Yes, 0 for No):</label>
+                <input type="text" id="mainroad" name="mainroad" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="guestroom" class="input-label">Guest Room (1 for Yes, 0 for No):</label>
+                <input type="text" id="guestroom" name="guestroom" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="basement" class="input-label">Basement (1 for Yes, 0 for No):</label>
+                <input type="text" id="basement" name="basement" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="hotwaterheating" class="input-label">Hot Water Heating (1 for Yes, 0 for No):</label>
+                <input type="text" id="hotwaterheating" name="hotwaterheating" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="airconditioning" class="input-label">Air Conditioning (1 for Yes, 0 for No):</label>
+                <input type="text" id="airconditioning" name="airconditioning" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="parking" class="input-label">parking(min:0 max:3):</label>
+                <input type="text" id="parking" name="parking" class="input-value" required>
+            </div>
+            <div class="input-field">
+                <label for="furnishingstatus" class="input-label">Furnishing Status (0 for Unfurnished, 1 for Semi-Furnished, 1 for Furnished):</label>
+                <input type="text" id="furnishingstatus" name="furnishingstatus" class="input-value" required>
+            </div>
+            <button type="submit" class="calculate-btn">Calculate</button>
+        </form>
+    </div>
+    
+</body>
+</html>
